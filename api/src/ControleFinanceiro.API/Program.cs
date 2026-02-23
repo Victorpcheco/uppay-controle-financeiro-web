@@ -47,12 +47,15 @@ using ControleFinanceiro.Infrastructure.Authentication;
 using ControleFinanceiro.Infrastructure.Authentication.Token;
 using ControleFinanceiro.Infrastructure.Data;
 using ControleFinanceiro.Infrastructure.Repositories;
+using ControleFinanceiro.Infrastructure.Shared;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AutoInjectAll();
 
 // configuração do entity com o sql server
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
