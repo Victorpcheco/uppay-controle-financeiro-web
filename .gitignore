@@ -1,12 +1,65 @@
-bin/
-obj/
-out/
-.vs/
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
-.idea/
-*.cache
-*.tmp
+## [ ÍNDICE ]
+## 1. Regras Globais para Monorepo
+## 2. Artefatos .NET (API)
+## 3. Artefatos Frontend (Node/React/Angular)
+## 4. Docker e IDEs
+## 5. Segredos e Ambiente
 
+# ==========================
+# 1. Regras Globais
+# ==========================
+# O prefixo **/ garante que a regra valha para qualquer subpasta
+**/bin/
+**/obj/
+**/debug/
+**/release/
+**/publish/
+
+# ==========================
+# 2. Artefatos .NET
+# ==========================
+*.SourceGeneratedFiles/
+**/TestResults/
+**/appsettings.Development.json
+**/appsettings.Local.json
+
+# ==========================
+# 3. Artefatos Frontend
+# ==========================
+**/node_modules/
+**/dist/
+**/build/
+**/out/
+**/.next/
+**/.cache/
+# Logs do npm/yarn
+**/npm-debug.log*
+**/yarn-error.log*
+**/yarn-debug.log*
+
+# ==========================
+# 4. Docker e IDEs
+# ==========================
+**/.docker/
+**/.vs/
+**/.vscode/
+**/.idea/
+**/*.user
+**/*.suo
+**/*.dbmdl
+**/*.jfm
+
+# ==========================
+# 5. Segredos e Configurações
+# ==========================
+**/.env
+**/.env.*
+!**/.env.example
+**/secrets.json
+
+# ==========================
+# 6. Sistema e Logs
+# ==========================
+**/*.log
+.DS_Store
+[Tt]humbs.db
