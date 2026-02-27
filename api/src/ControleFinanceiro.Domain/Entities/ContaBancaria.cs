@@ -1,8 +1,7 @@
 namespace ControleFinanceiro.Domain.Entities;
 
-public class ContaBancaria
+public class ContaBancaria : EntidadeBase
 {
-    public int Id { get; private set; }
     public string NomeConta { get; private set; } = null!;
     public decimal SaldoInicial { get; private set; }
     public int UsuarioId { get; private set; }

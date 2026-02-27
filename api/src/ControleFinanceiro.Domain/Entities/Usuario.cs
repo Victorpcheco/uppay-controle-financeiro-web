@@ -2,9 +2,8 @@ using System.Net.Mail;
 
 namespace ControleFinanceiro.Domain.Entities;
 
-public class Usuario
+public class Usuario : EntidadeBase
 {
-    public int Id { get; private set; }
     public string NomeCompleto { get; private set; } = null!;
     public string Email { get; private set; } = null!;
     public string SenhaHash { get; private set; } = null!;

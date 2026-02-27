@@ -3,9 +3,8 @@ using System;
 
 namespace ControleFinanceiro.Domain.Entities;
 
-public class Categoria
+public class Categoria : EntidadeBase
 {
-    public int Id { get; private set; }
     public string NomeCategoria { get; private set; } = null!;
     public Tipo Tipo { get; private set; }
     public int UsuarioId { get; private set; }

@@ -1,8 +1,7 @@
 namespace ControleFinanceiro.Domain.Entities;
 
-public class MesReferencia
+public class MesReferencia : EntidadeBase
 {
-    public int Id { get; private set; }
     public string NomeMes { get; private set; } = null!;
     public int UsuarioId { get; private set; }
     public Usuario Usuario { get; private set; } = null!;
