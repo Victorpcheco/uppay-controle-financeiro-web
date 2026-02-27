@@ -1112,7 +1112,10 @@
           "FluentValidation": "12.0.0"
         },
         "runtime": {
-          "ControleFinanceiro.Application.dll": {}
+          "ControleFinanceiro.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "ControleFinanceiro.Domain/1.0.0": {
@@ -1120,7 +1123,10 @@
           "BCrypt.Net-Next": "4.0.3"
         },
         "runtime": {
-          "ControleFinanceiro.Domain.dll": {}
+          "ControleFinanceiro.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "ControleFinanceiro.Infrastructure/1.0.0": {
@@ -1136,7 +1142,10 @@
           "System.IdentityModel.Tokens.Jwt": "8.11.0"
         },
         "runtime": {
-          "ControleFinanceiro.Infrastructure.dll": {}
+          "ControleFinanceiro.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

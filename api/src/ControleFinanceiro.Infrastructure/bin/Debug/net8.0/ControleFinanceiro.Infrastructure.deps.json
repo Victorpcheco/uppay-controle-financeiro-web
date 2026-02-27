@@ -1069,7 +1069,10 @@
           "FluentValidation": "12.0.0"
         },
         "runtime": {
-          "ControleFinanceiro.Application.dll": {}
+          "ControleFinanceiro.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "ControleFinanceiro.Domain/1.0.0": {
@@ -1077,7 +1080,10 @@
           "BCrypt.Net-Next": "4.0.3"
         },
         "runtime": {
-          "ControleFinanceiro.Domain.dll": {}
+          "ControleFinanceiro.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
