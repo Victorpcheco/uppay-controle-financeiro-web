@@ -1,5 +1,7 @@
 using System.Text;
 using ControleFinanceiro.Application.Interfaces;
+using ControleFinanceiro.Domain.Interfaces;
+using ControleFinanceiro.Infrastructure.Authentication;
 using ControleFinanceiro.Infrastructure.Authentication.Token;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -12,6 +14,7 @@ public static class AuthExtensions
     {
         services.AddScoped<IGerarToken, GerarToken>();
         services.AddScoped<IGerarRefreshToken, GerarRefreshToken>();
+        services.AddScoped<IPasswordHasher, BcryptPasswordHasher>();
 
         services.AddAuthentication(options =>
         {

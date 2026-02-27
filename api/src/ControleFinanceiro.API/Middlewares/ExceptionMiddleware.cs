@@ -1,5 +1,6 @@
 using System.Text.Json;
 using ControleFinanceiro.Application.Dtos;
+using ControleFinanceiro.Domain.Exceptions;
 
 namespace ControleFinanceiro.API.Middlewares;
 
@@ -30,6 +31,9 @@ public class ExceptionMiddleware(
         // Define o status HTTP conforme o tipo da exceção
         context.Response.StatusCode = exception switch
         {
+            DomainException { Codigo: DomainErrorCode.NaoEncontrado } => StatusCodes.Status404NotFound,
+            DomainException { Codigo: DomainErrorCode.Conflito } => StatusCodes.Status409Conflict,
+            DomainException => StatusCodes.Status400BadRequest,
             KeyNotFoundException => StatusCodes.Status404NotFound,
             ArgumentException => StatusCodes.Status400BadRequest,
             _ => StatusCodes.Status500InternalServerError

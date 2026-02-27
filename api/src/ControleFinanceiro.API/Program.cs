@@ -17,6 +17,9 @@ builder.Services.AddScoped<IUserContext, UserContext>();
 // AutoMapper
 builder.Services.AddAutoMapperProfiles();
 
+// MediatR + ValidationBehavior + Validators
+builder.Services.AddMediatRServices();
+
 // Domínios
 builder.Services.AddUsuarioServices();
 builder.Services.AddContaBancariaServices();
