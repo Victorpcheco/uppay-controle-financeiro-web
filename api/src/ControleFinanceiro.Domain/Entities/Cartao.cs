@@ -1,8 +1,7 @@
 namespace ControleFinanceiro.Domain.Entities;
 
-public class Cartao
+public class Cartao : EntidadeBase
 {
-    public int Id { get; private set; }
     public string NomeCartao { get; private set; } = null!;
     public int UsuarioId { get; private set; }
     public Usuario Usuario { get; private set; } = null!;

@@ -2,9 +2,8 @@
 
 namespace ControleFinanceiro.Domain.Entities
 {
-    public class Movimentacoes
+    public class Movimentacoes : EntidadeBase
     {
-        public int Id { get; private set; }
         public string Titulo { get; private set; } = null!;
         public DateOnly DataVencimento { get; private set; }
         public Tipo Tipo { get; private set; }
@@ -82,6 +81,8 @@ namespace ControleFinanceiro.Domain.Entities
             Valor = valor;
             Realizado = realizado;
             FormaDePagamento = formaDePagamento;
+            
+            
         }
     }
 }

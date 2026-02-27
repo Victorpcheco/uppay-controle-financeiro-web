@@ -60,6 +60,26 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
             .HasForeignKey(c => c.UsuarioId)
             .OnDelete(DeleteBehavior.Restrict);
     }
+    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+        var agora = DateTime.UtcNow;
+
+        foreach (var entry in ChangeTracker.Entries<EntidadeBase>())
+        {
+            switch (entry.State)
+            {
+                case EntityState.Added:
+                    entry.Entity.DefinirCriadoEm(agora);
+                    break;
+                case EntityState.Modified:
+                    entry.Entity.DefinirAtualizadoEm(agora);
+                    break;
+            }
+        }
+
+        return base.SaveChangesAsync(cancellationToken);
+    }
+
     public DbSet<Usuario> Usuarios { get; set;}
     public DbSet<Categoria> Categorias { get; set;}
     public DbSet<ContaBancaria> ContasBancarias { get; set;}
